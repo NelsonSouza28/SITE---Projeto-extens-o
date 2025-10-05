@@ -1,0 +1,108 @@
+/* REGRAS PARA AJUSTE EM TELAS MENORES (MEDIA QUERIES) */
+
+/* --- ANIMAÇÃO DE FADE-IN (Não é de responsividade, mas precisa estar aqui) --- */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Para tablets e telas menores */
+@media (max-width: 992px) {
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Para celulares */
+@media (max-width: 768px) {
+  /* Menu Mobile */
+  /* Para impedir que a tela role quando o menu estiver ativo */
+body.menu-ativo {
+    overflow: hidden; /* Remove as barras de rolagem vertical e horizontal */
+}
+
+/* Deixar o menu semi-transparente e fixo */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(26, 26, 26, 0.9); /* Fundo escuro semi-transparente (90% de opacidade) */
+    backdrop-filter: blur(5px); /* Efeito de desfoque no que está atrás do menu (para navegadores compatíveis) */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 1000;
+}
+
+/* Estilo para os links dentro do menu (para se destacarem no fundo escuro) */
+.nav a {
+    color: #fff; /* Cor do texto branca */
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #007bff; /* Cor de destaque ao passar o mouse */
+}
+
+  .nav.nav-active {
+    background-color: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transform: translateX(0);
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: #333;
+    transition: color 2s;
+    padding: 0.5rem 1rem;
+    margin: 1.5rem 0;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: color 0.3s;
+    border-bottom: 2px;
+    margin: 1.5rem 0;
+  }
+  .nav a:hover {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+  }
+
+  .mobile-menu-button {
+    display: block;
+  }
+
+  /* Layout das seções */
+  .content-section, .content-section.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+
+  .content-section .content-img,
+  .content-section.reverse .content-img {
+    order: -1;
+    border-right: none;
+    border-left: 5px solid var(--primary-color);
+  }
+  
+  .banner {
+    font-size: 1.2rem;
+    transform: skewY(0);
+  }
+}

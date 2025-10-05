@@ -1,0 +1,50 @@
+/* ESTILOS GLOBAIS, FONTES E VARIÁVEIS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
+
+:root {
+  /* TEMA ESCURO (PADRÃO) */
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --text-color-light: #cccccc;
+  --primary-color: #FFD700;
+  --gradient-primary: linear-gradient(90deg, #FFD700, #FFA500);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --card-background: #222222;
+  --banner-text-color: #121212;
+}
+
+body.light-mode {
+  /* TEMA CLARO */
+  --background-color: #f0f2f5;
+  --text-color: #1c1e21;
+  --text-color-light: #555555;
+  --primary-color: #FF8C00;
+  --gradient-primary: linear-gradient(90deg, #FFA500, #FF6347);
+  --border-color: rgba(0, 0, 0, 0.1);
+  --card-background: #ffffff;
+  --banner-text-color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}

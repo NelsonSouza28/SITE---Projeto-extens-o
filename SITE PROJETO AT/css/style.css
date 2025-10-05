@@ -1,0 +1,20 @@
+/*
+	ARQUIVO MESTRE DE ESTILOS
+	Este arquivo serve apenas para importar os outros módulos de CSS na ordem correta.
+	Não coloque regras CSS diretamente aqui, apenas use @import.
+*/
+
+/* Importa variáveis, fontes e estilos globais */
+@import url('base.css');
+
+/* Estilos do cabeçalho, logo e navegação */
+@import url('header.css');
+
+/* Estilos das seções principais (hero, banners, conteúdo, footer) */
+@import url('secoes.css');
+
+/* Estilos de componentes reutilizáveis (theme switcher, acordeão, flashcards, quiz) */
+@import url('componentes.css');
+
+/* Regras de responsividade e media queries */
+@import url('responsividade.css');
